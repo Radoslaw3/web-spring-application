@@ -31,12 +31,23 @@ public class UserController {
         return "users";
     }
 
+    @RequestMapping(value = "/users-tiles", method = RequestMethod.GET)    //aby string wyswietlil
+    public String showUsersTiles(Model model) {
+
+        List<User> users = userRepository.findAll();
+
+        model.addAttribute("usersList", users);
+
+        return "users-tiles";
+    }
+
     @RequestMapping(value = "/users/create", method = RequestMethod.GET)
     public String getUserCreate() {
 
         return "formularz";
 
     }
+
 
     @RequestMapping(value = "/users/create", method = RequestMethod.POST)
     public String createUser(@RequestParam(name = "imie") String firstName,
