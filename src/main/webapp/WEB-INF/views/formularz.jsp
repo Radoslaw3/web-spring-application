@@ -28,12 +28,20 @@
         </div>
         
         <div class="form-group">
-            <label for="email" class="col-md-2 control-label">Email:</label>
+            <label for="avatarUrl" class="col-md-2 control-label">Avatar:</label>
             <div class="col-md-10">
-                <input id="email" name="email" class="form-control"
-                       type="email" placeholder="Wpisz email" required>
+                <input id="email" name="avatarUrl" class="form-control"
+                       type="text" placeholder="Podaj url avatara">
             </div>
         </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-md-2 control-label">Email:</label>
+                    <div class="col-md-10">
+                        <input id="email" name="email" class="form-control"
+                               type="email" placeholder="Wpisz email" required>
+                    </div>
+                </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

@@ -15,22 +15,33 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(nullable =  false)              // aby nie byly null-em wstawiamy
     private String email;
+
+    @Column(name = "avatar_url")
+    private String avatarUrl;
 
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, String email) {
+    public User(Long id, String firstName, String lastName, String email, String avatarUrl) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.avatarUrl = avatarUrl;
     }
 
-    public User(String firstName, String lastName, String email) {
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public User(String firstName, String lastName, String email, String avatarUrl) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.avatarUrl = avatarUrl;
+
     }
 
     public Long getId() {

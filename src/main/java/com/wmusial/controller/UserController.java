@@ -3,6 +3,7 @@ package com.wmusial.controller;
 import com.wmusial.model.User;
 import com.wmusial.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +41,10 @@ public class UserController {
     @RequestMapping(value = "/users/create", method = RequestMethod.POST)
     public String createUser(@RequestParam(name = "imie") String firstName,
                              @RequestParam(name = "nazwisko") String lastName,
-                             @RequestParam String email) {
+                             @RequestParam String email,
+                             @RequestParam(required = false) String avatarUrl) {
 
-        User user = new User(firstName, lastName, email);
+        User user = new User(firstName, lastName, email, avatarUrl);
 
         userRepository.save(user);
         return "redirect:/users";
@@ -62,8 +64,9 @@ public class UserController {
     public String updateUser(@RequestParam Long id,
                             @RequestParam(name = "imie") String firstName,
                             @RequestParam(name = "nazwisko") String lastName,
-                            @RequestParam String email) {
-        User user = new User(id, firstName, lastName, email);
+                            @RequestParam String email,
+                             @RequestParam(required = false) String avatarUrl) {            //jesli jest to jest a jak nie to nie musi byc
+        User user = new User(id, firstName, lastName, email, avatarUrl);
 
         userRepository.save(user);
 

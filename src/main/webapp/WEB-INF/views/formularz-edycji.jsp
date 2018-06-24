@@ -37,6 +37,14 @@
             </div>
         </div>
 
+                <div class="form-group">
+                    <label for="avatarUrl" class="col-md-2 control-label">Avatar:</label>
+                    <div class="col-md-10">
+                        <input id="email" name="avatarUrl" class="form-control" value="${user.avatarUrl}
+                               type="text" placeholder="Podaj url avatara">
+                    </div>
+                </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-success">Zapisz</button>
